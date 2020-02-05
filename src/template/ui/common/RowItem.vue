@@ -18,7 +18,7 @@
 <script>
     import {FORM_CONSTANTS} from "sethFormBuilder/config/constants";
     import {CONTROL_TYPES} from "sethFormBuilder/config/control_constant";
-    //import ControlItem from "./ControlItem";
+    import ControlItem from "./ControlItem";
     import {eventBus, EventHandlerConstant} from 'sethFormBuilder/template/handler/event_handler';
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
     import {Hooks} from 'sethFormBuilder/template/components/hook_lists';
@@ -44,12 +44,12 @@
                 controlInfo.type = controlType;
                 // generate id
                 controlInfo.name = _.domUniqueID(`control_${controlType}_`);
-                controlInfo.label = FORM_CONSTANTS.Type[controlType].label;
+                controlInfo.label = this.CONTROL_TYPES[controlType].label;
                 controlInfo.fieldName = controlInfo.name; // same for both
 
                 // check if there's any more special fields?
-                if(CONTROL_TYPES[controlType].other_properties) {
-                    _.each(CONTROL_TYPES[controlType].other_properties, (value, key) => {
+                if(this.CONTROL_TYPES[controlType].other_properties) {
+                    _.each(this.CONTROL_TYPES[controlType].other_properties, (value, key) => {
                         controlInfo[key] = value;
                     });
                 }
