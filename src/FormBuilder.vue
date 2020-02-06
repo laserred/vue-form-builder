@@ -14,6 +14,10 @@
         require('sethFormBuilder/config/loader');
     }
 
+    import _ from 'underscore';
+    import underscoreDeepExtend from 'underscore-deep-extend';
+    _.mixin({deepExtend: underscoreDeepExtend(_)});
+
     // load necessary
     import {Hooks as GUI_Hooks} from './gui/components/hook_lists';
     import {Hooks as Template_Hooks} from './template/components/hook_lists';
