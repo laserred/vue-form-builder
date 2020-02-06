@@ -9,11 +9,6 @@
                 </select>
             </div>
             <div class="col-md-10 text-right">
-                <button class="btn btn-default" @click="preview">
-                    <font-awesome-icon icon="image"/>
-                    Preview
-                </button>
-
                 <button class="btn btn-default" @click="addSection">Add Section</button>
             </div>
         </div>
@@ -146,9 +141,6 @@
 
                 // after hook
                 Hooks.Row.afterAdd.run(rowInfo, this.form.sections[secIndex]);
-            },
-            preview() {
-                this.$parent.preview();
             },
             updateSectionInfo(sectionInfo, index) {
                 _.deepExtend(this.form.sections[index], sectionInfo);
