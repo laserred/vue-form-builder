@@ -12,7 +12,7 @@ class HookList {
   	}
 
 	_getFunctions(){
-		return _.pluck(_.sortBy(this._listHook, 'priority'), 'fn');	// asc
+		return _.map(_.sortBy(this._listHook, 'priority'), 'fn');	// asc
 	}
 
 
