@@ -28,7 +28,7 @@ require('bootstrap');
 FontAwesomeRegister.register();
 
 // load underscore
-window._ = require('underscore'); // override
+window._ = require('lodash'); // override
 require('sethFormBuilder/config/helper_function');
 _.mixin({deepExtend: underscoreDeepExtend(_)});
 
